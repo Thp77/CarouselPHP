@@ -33,7 +33,7 @@
             ?>
                     <div class="carousel-item <?php if ($k == 2) {
                                                     echo  "active";
-                                                }  ?> " data-bs-interval="1000">
+                                                }  ?> " data-bs-interval="5000">
                         <img src="./<?= $dossier ?>/<?= $v ?>" class="d-block w-100" alt="Thai">
                     </div>
 
@@ -56,20 +56,20 @@
 
         <!----- fin  création du  carrousel dynamique --->
         <div class="carousel-indicators">
-      <?php
-      //Utilisation d'une boucle foreach pour afficher els boutons attention à "." et ".." qui ne sont pas des images.
-      foreach ($scan as $k => $v) {
-        if ($v != "." && $v != "..") {
-          //TERMINER LA BOUCLE !!!
-      ?>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $k - 2 ?>" class="<?php if ($k == 2) {
-          echo "active";
-          } ?>" aria-label="Slide <?= $k - 2 ?>"></button>
-      <?php
-        }
-      }
-      ?>
-    </div>
+            <?php
+            //Utilisation d'une boucle foreach pour afficher els boutons attention à "." et ".." qui ne sont pas des images.
+            foreach ($scan as $k => $v) {
+                if ($v != "." && $v != "..") {
+                    //TERMINER LA BOUCLE !!!
+            ?>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<?= $k - 2 ?>" class="<?php if ($k == 2) {
+                                                                                                                                    echo "active";
+                                                                                                                                } ?>" aria-label="Slide <?= $k - 2 ?>"></button>
+            <?php
+                }
+            }
+            ?>
+        </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
     </div>
